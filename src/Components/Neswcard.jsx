@@ -1,5 +1,6 @@
 import { CiShare2 } from "react-icons/ci";
 import { FaEye, FaRegBookmark, FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 export default function Neswcard({ news }) {
   const {
@@ -8,6 +9,7 @@ export default function Neswcard({ news }) {
     thumbnail_url,
     rating,
     total_view,
+    id,
 
     details,
   } = news;
@@ -64,9 +66,10 @@ export default function Neswcard({ news }) {
 
         {/* Footer */}
         <div className="mt-4 flex items-center justify-end text-sm">
+          <Link to={`/news-details/${id}`}>
           <button className="btn btn-sm btn-primary normal-case">
             Read More
-          </button>
+          </button></Link>
         </div>
         <div>
           <div className="flex justify-between items-center gap-4">
